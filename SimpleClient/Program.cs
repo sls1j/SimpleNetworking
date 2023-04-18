@@ -17,12 +17,19 @@ for (int i = 0; i < 10; i++)
 
 client.Close();
 
-// Defines the Client logic
+/// <summary>
+/// Defines the code that can write and read to a connection
+/// </summary>
 class Client
 {
   TcpClient _client;
   NetworkStream _stream;
 
+  /// <summary>
+  /// The constructor
+  /// </summary>
+  /// <param name="host">The internet address to connect to.  Can be a host name such as something.com, or an IP address 192.168.4.23</param>
+  /// <param name="port">The port to use (1-1024 reserved for common programs, > 49152–65535</param>
   public Client(string host, int port)
   {
     _client = new TcpClient(host, port);
